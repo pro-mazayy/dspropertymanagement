@@ -112,11 +112,17 @@
 
 @layer utilities {
   .text-gradient {
-    @apply bg-gradient-to-br from-white via-white to-primary/50 bg-clip-text text-transparent;
+    background-image: linear-gradient(to bottom right, white, white, hsla(68, 100%, 50%, 0.5));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .text-neon-gradient {
-    @apply bg-gradient-to-br from-primary via-primary to-[hsl(68, 100%, 80%)] bg-clip-text text-transparent;
+    background-image: linear-gradient(to bottom right, hsl(var(--primary)), hsl(var(--primary)), hsl(68, 100%, 80%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 
   .neon-glow {
@@ -134,15 +140,21 @@
   }
 
   .headline-aggressive {
-    @apply font-black uppercase tracking-tighter leading-[0.85];
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    line-height: 0.85;
   }
 
   .glass {
-    @apply backdrop-blur-2xl bg-background/70;
+    backdrop-filter: blur(24px);
+    background-color: hsla(0, 0%, 0%, 0.7);
   }
 
   .glass-card {
-    @apply backdrop-blur-2xl bg-card/60 border border-white/10;
+    backdrop-filter: blur(24px);
+    background-color: hsla(0, 0%, 5%, 0.6);
+    border: 1px solid hsla(0, 0%, 100%, 0.1);
   }
 
   /* Premium Textures & Sections */
