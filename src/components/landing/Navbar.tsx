@@ -12,10 +12,17 @@ const navLinks = [
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Calculate scroll progress
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight - windowHeight;
+      const scrolled = (window.scrollY / documentHeight) * 100;
+      setScrollProgress(Math.min(scrolled, 100));
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -26,18 +33,23 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md border-b border-gray-200 py-2 shadow-sm" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled 
+        ? "bg-white/95 backdrop-blur-md border-b border-gray-200 py-3 shadow-lg" 
+        : "bg-gradient-to-b from-black/50 to-transparent py-6"
         }`}
     >
+      {/* Scroll Progress Bar */}
+      <div className="absolute bottom-0 left-0 h-[2px] bg-primary neon-glow-sm transition-all duration-150 ease-out" style={{ width: `${scrollProgress}%` }} />
+      
       <nav className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-primary flex items-center justify-center rotate-45 group-hover:rotate-90 transition-transform duration-500">
-            <ShieldAlert className="w-6 h-6 text-black -rotate-45 group-hover:-rotate-90 transition-transform duration-500" />
+        <a href="#" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 bg-primary flex items-center justify-center rotate-45 group-hover:rotate-90 transition-transform duration-500 shadow-lg">
+            <ShieldAlert className="w-5 h-5 text-black -rotate-45 group-hover:-rotate-90 transition-transform duration-500" />
           </div>
-          <span className="text-2xl headline-aggressive tracking-tighter">
+          <span className="font-display text-2xl font-bold tracking-tight">
             <span className="text-primary">DREAM</span>
-            <span className="text-charcoal">STATE</span>
+            <span className={isScrolled ? "text-gray-900" : "text-white"}>STATE</span>
           </span>
         </a>
 
@@ -47,7 +59,9 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-black text-charcoal-medium hover:text-primary tracking-[0.2em] transition-all hover:translate-y-[-1px]"
+              className={`text-xs font-bold tracking-[0.2em] transition-all hover:text-primary hover:translate-y-[-1px] ${
+                isScrolled ? "text-gray-600" : "text-white/80"
+              }`}
             >
               {link.label}
             </a>
@@ -58,7 +72,7 @@ export function Navbar() {
         <div className="hidden md:block">
           <Button
             asChild
-            className="bg-primary text-black font-black text-sm rounded-none hover:scale-105 transition-all px-8 py-6 neon-glow-sm"
+            className="bg-primary text-black font-bold text-sm rounded-none hover:scale-105 transition-all px-8 py-6 shadow-lg hover:shadow-xl"
           >
             <a href="#calculator">DEPLOY ANALYSIS</a>
           </Button>
@@ -67,7 +81,7 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-charcoal"
+          className={`md:hidden p-2 transition-colors ${isScrolled ? "text-gray-900" : "text-white"}`}
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>

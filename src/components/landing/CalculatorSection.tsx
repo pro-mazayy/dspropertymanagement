@@ -67,10 +67,10 @@ export function CalculatorSection() {
   };
 
   return (
-    <section id="calculator" className="py-32 lg:py-48 section-light grain-overlay relative overflow-hidden">
+    <section id="calculator" className="py-32 lg:py-48 bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-[#080808] relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[250px]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/8 rounded-full blur-[250px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -81,20 +81,20 @@ export function CalculatorSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-6xl lg:text-7xl headline-aggressive mb-8">
+            <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white">
               DEPLOY THE <br />
               <span className="text-primary neon-text-glow">REVENUE AUDIT</span>
             </h2>
-            <p className="text-xl text-muted-foreground leading-relaxed mb-10 max-w-xl">
+            <p className="text-xl text-gray-400 leading-relaxed mb-10 max-w-xl">
               Stop guessing. Our proprietary algorithm cross-references thousands of local data points to reveal the <span className="text-white font-bold">hidden equity</span> in your property. No fluff, no BS. Just data.
             </p>
 
             {/* Guarantee Badge */}
-            <div className="inline-flex items-center gap-6 p-6 border-2 border-primary/30 bg-primary/5 mb-10">
+            <div className="inline-flex items-center gap-6 p-6 border-2 border-primary/40 bg-primary/10 mb-10">
               <ShieldCheck className="w-12 h-12 text-primary shrink-0" />
               <div>
-                <p className="text-lg font-black headline-aggressive text-primary">THE 128% GUARANTEE</p>
-                <p className="text-sm text-white/70 italic">If we can't beat your current revenue, we don't get paid. Period.</p>
+                <p className="font-display text-lg font-bold text-primary">THE 128% GUARANTEE</p>
+                <p className="text-sm text-gray-400 italic">If we can't beat your current revenue, we don't get paid. Period.</p>
               </div>
             </div>
 
@@ -105,7 +105,7 @@ export function CalculatorSection() {
                 "Maximized Occupancy Projection",
                 "Direct Lead Generation Strategy"
               ].map((item) => (
-                <li key={item} className="flex items-center gap-3 text-white/80 font-medium">
+                <li key={item} className="flex items-center gap-3 text-gray-300 font-medium">
                   <Zap className="w-5 h-5 text-primary" />
                   {item}
                 </li>
@@ -122,15 +122,15 @@ export function CalculatorSection() {
             className="relative"
           >
             {/* Scientific Overlay Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-primary/40" />
-            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-primary/40" />
+            <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-primary/50" />
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-primary/50" />
 
-            <div className="p-8 md:p-12 bg-card/60 border border-white/10 backdrop-blur-3xl relative z-10">
+            <div className="p-8 md:p-12 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-lg border border-white/20 relative z-10 shadow-2xl">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <Label htmlFor="name" className="text-xs font-black headline-aggressive tracking-widest text-primary">FULL NAME</Label>
+                      <Label htmlFor="name" className="text-xs font-bold tracking-widest text-primary">FULL NAME</Label>
                       <Input
                         id="name"
                         name="name"
@@ -139,11 +139,11 @@ export function CalculatorSection() {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="bg-black/40 border-white/10 rounded-none h-14 focus:border-primary transition-all text-lg"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-500 h-14 focus:border-primary focus:bg-white/15 transition-all text-lg"
                       />
                     </div>
                     <div className="space-y-3">
-                      <Label htmlFor="email" className="text-xs font-black headline-aggressive tracking-widest text-primary">SECURE EMAIL</Label>
+                      <Label htmlFor="email" className="text-xs font-bold tracking-widest text-primary">SECURE EMAIL</Label>
                       <Input
                         id="email"
                         name="email"
@@ -152,7 +152,7 @@ export function CalculatorSection() {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="bg-black/40 border-white/10 rounded-none h-14 focus:border-primary transition-all text-lg"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-500 h-14 focus:border-primary focus:bg-white/15 transition-all text-lg"
                       />
                     </div>
                   </div>
@@ -169,14 +169,14 @@ export function CalculatorSection() {
                         value={formData.address}
                         onChange={handleChange}
                         required
-                        className="bg-black/40 border-white/10 rounded-none h-14 pl-12 focus:border-primary transition-all text-lg underline decoration-primary/30"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-500 h-14 pl-12 focus:border-primary focus:bg-white/15 transition-all text-lg"
                       />
                     </div>
                   </div>
 
                   <div className="grid md:grid-cols-2 gap-8">
                     <div className="space-y-3">
-                      <Label htmlFor="phone" className="text-xs font-black headline-aggressive tracking-widest text-primary">DIRECT LINE</Label>
+                      <Label htmlFor="phone" className="text-xs font-bold tracking-widest text-primary">DIRECT LINE</Label>
                       <Input
                         id="phone"
                         name="phone"
@@ -185,11 +185,11 @@ export function CalculatorSection() {
                         value={formData.phone}
                         onChange={handleChange}
                         required
-                        className="bg-black/40 border-white/10 rounded-none h-14 focus:border-primary transition-all text-lg"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-500 h-14 focus:border-primary focus:bg-white/15 transition-all text-lg"
                       />
                     </div>
                     <div className="space-y-3">
-                      <Label htmlFor="bedrooms" className="text-xs font-black headline-aggressive tracking-widest text-primary">BATTLE STATIONS (BEDROOMS)</Label>
+                      <Label htmlFor="bedrooms" className="text-xs font-bold tracking-widest text-primary">BATTLE STATIONS (BEDROOMS)</Label>
                       <Input
                         id="bedrooms"
                         name="bedrooms"
@@ -200,7 +200,7 @@ export function CalculatorSection() {
                         value={formData.bedrooms}
                         onChange={handleChange}
                         required
-                        className="bg-black/40 border-white/10 rounded-none h-14 focus:border-primary transition-all text-lg"
+                        className="bg-white/10 border-white/20 text-white placeholder:text-gray-500 h-14 focus:border-primary focus:bg-white/15 transition-all text-lg"
                       />
                     </div>
                   </div>
@@ -208,7 +208,7 @@ export function CalculatorSection() {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary text-black font-black text-2xl py-10 rounded-none headline-aggressive hover:scale-[1.02] transition-all shadow-[0_0_40px_rgba(209,255,26,0.3)] animate-pulse-glow"
+                    className="w-full bg-primary text-black font-bold text-2xl py-10 hover:scale-[1.02] transition-all shadow-neon-lg animate-pulse-glow"
                   >
                     {isSubmitting ? (
                       <Loader2 className="w-8 h-8 animate-spin" />
@@ -228,20 +228,20 @@ export function CalculatorSection() {
                     <Target className="w-12 h-12 text-black -rotate-45" />
                   </motion.div>
 
-                  <h3 className="text-4xl font-black headline-aggressive text-white mb-6">
+                  <h3 className="font-display text-4xl font-bold text-white mb-6">
                     AUDIT COMPLETE
                   </h3>
 
-                  <div className="mb-10 p-8 border border-primary/20 bg-primary/5">
-                    <div className="flex items-center justify-center gap-2 text-6xl md:text-7xl font-black text-primary headline-aggressive">
+                  <div className="mb-10 p-8 border border-primary/30 bg-primary/10">
+                    <div className="flex items-center justify-center gap-2 text-6xl md:text-7xl font-bold text-primary font-display">
                       <DollarSign className="w-12 h-12 stroke-[3px]" />
                       {estimate?.toLocaleString()}
                     </div>
-                    <p className="text-xl text-primary font-black mt-2 tracking-widest uppercase">Targeted Monthly Yield</p>
+                    <p className="text-xl text-primary font-bold mt-2 tracking-widest uppercase">Targeted Monthly Yield</p>
                   </div>
 
-                  <p className="text-lg text-white/80 mb-10 leading-relaxed">
-                    Data has been verified. Our market analysts are preparing the <span className="text-primary font-bold">128% Strategy Packet</span> for <span className="font-black text-white">{formData.name}</span>. Expect deployment within 24 hours.
+                  <p className="text-lg text-gray-400 mb-10 leading-relaxed">
+                    Data has been verified. Our market analysts are preparing the <span className="text-primary font-bold">128% Strategy Packet</span> for <span className="font-bold text-white">{formData.name}</span>. Expect deployment within 24 hours.
                   </p>
 
                   <Button

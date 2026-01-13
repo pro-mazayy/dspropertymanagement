@@ -15,7 +15,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-        display: ["Inter", "system-ui", "sans-serif"],
+        display: ["'Clash Display'", "Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -52,6 +52,19 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         neon: "hsl(var(--neon))",
+        lime: {
+          DEFAULT: "hsl(var(--primary))",
+          50: "hsl(68 100% 95%)",
+          100: "hsl(68 100% 90%)",
+          200: "hsl(68 100% 80%)",
+          300: "hsl(68 100% 70%)",
+          400: "hsl(68 100% 60%)",
+          500: "hsl(68 100% 50%)",
+          600: "hsl(68 100% 45%)",
+          700: "hsl(68 100% 40%)",
+          800: "hsl(68 100% 35%)",
+          900: "hsl(68 100% 30%)",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -67,6 +80,12 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      boxShadow: {
+        'neon': '0 0 20px hsl(68 100% 50% / 0.4), 0 0 40px hsl(68 100% 50% / 0.2)',
+        'neon-lg': '0 0 30px hsl(68 100% 50% / 0.5), 0 0 60px hsl(68 100% 50% / 0.25)',
+        'premium': '0 25px 50px -12px rgba(0, 0, 0, 0.15)',
+        'glass': '0 8px 32px rgba(0, 0, 0, 0.08)',
       },
       keyframes: {
         "accordion-down": {

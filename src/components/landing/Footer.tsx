@@ -32,7 +32,7 @@ export function Footer() {
               <div className="w-10 h-10 bg-primary flex items-center justify-center rotate-45 group-hover:rotate-90 transition-transform duration-500">
                 <ShieldAlert className="w-6 h-6 text-black -rotate-45 group-hover:-rotate-90 transition-transform duration-500" />
               </div>
-              <span className="text-2xl headline-aggressive tracking-tighter">
+              <span className="font-display text-2xl font-bold tracking-tight">
                 <span className="text-primary">DREAM</span>
                 <span className="text-white">STATE</span>
               </span>
@@ -56,7 +56,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-black headline-aggressive text-primary mb-8 tracking-widest text-sm uppercase">STRATEGIC LINKS</h4>
+            <h4 className="font-display font-bold text-primary mb-8 tracking-wide text-sm uppercase">STRATEGIC LINKS</h4>
             <ul className="space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -74,7 +74,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-black headline-aggressive text-primary mb-8 tracking-widest text-sm uppercase">FIELD HQ</h4>
+            <h4 className="font-display font-bold text-primary mb-8 tracking-wide text-sm uppercase">FIELD HQ</h4>
             <ul className="space-y-6">
               <li>
                 <a
@@ -106,7 +106,7 @@ export function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="font-black headline-aggressive text-primary mb-8 tracking-widest text-sm uppercase">PROTOCOLS</h4>
+            <h4 className="font-display font-bold text-primary mb-8 tracking-wide text-sm uppercase">PROTOCOLS</h4>
             <ul className="space-y-4">
               {legalLinks.map((link) => (
                 <li key={link.label}>
@@ -124,10 +124,10 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-xs font-black headline-aggressive text-white/30 tracking-[0.2em]">
+          <p className="text-xs font-bold text-white/30 tracking-widest">
             © {new Date().getFullYear()} DREAMSTATE PROPERTY MANAGEMENT. ALL RIGHTS RESERVED.
           </p>
-          <div className="flex items-center gap-4 text-xs font-black headline-aggressive text-primary/50 tracking-[0.2em]">
+          <div className="flex items-center gap-4 text-xs font-bold text-primary/50 tracking-widest">
             <Zap className="w-4 h-4 fill-current" />
             ESTABLISHED 2019 • GLOBAL DEPLOYMENT
           </div>

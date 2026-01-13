@@ -39,14 +39,17 @@ const itemVariants = {
 
 export function PainSection() {
   return (
-    <section className="py-32 lg:py-48 section-dark grain-overlay relative overflow-hidden">
-      {/* Background Image / Texture */}
+    <section className="py-32 lg:py-48 relative overflow-hidden">
+      {/* Rich Dark Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0d0d0d] to-[#080808]" />
+      
+      {/* Subtle Pattern Overlay */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23d1ff1a" fill-opacity="1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")' }} />
+      
+      {/* Glow Effects */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-soft-light grayscale"
-          style={{ backgroundImage: 'url("/C:/Users/HP PC/.gemini/antigravity/brain/d4e41df3-fa25-4cb3-a5b0-6ae2c6ea22ec/modern_architecture_night_exterior_miami_bw_2_1768322183830.png")' }}
-        />
-        <div className="absolute inset-0 mesh-gradient opacity-40" />
+        <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-destructive/10 rounded-full blur-[200px]" />
+        <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-primary/15 rounded-full blur-[200px]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -56,14 +59,17 @@ export function PainSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-4xl mb-24"
+          className="max-w-4xl mb-20"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl headline-aggressive mb-8">
+          <span className="inline-block px-4 py-2 mb-6 text-xs font-bold tracking-[0.2em] text-primary uppercase border border-primary/30 bg-primary/5">
+            THE HARD TRUTH
+          </span>
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white">
             ARE YOU AN OWNER OR A <br />
-            <span className="text-destructive font-black underline">GLORIFIED HOTEL CLERK?</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-red-400 to-orange-400">GLORIFIED HOTEL CLERK?</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl">
-            Success in short-term rentals isn't about "hosting." It's about <span className="text-white font-bold">Cold, Hard Data</span> and <span className="text-white font-bold">Ruthless Execution.</span> If you aren't dominating, you're losing.
+          <p className="text-xl md:text-2xl text-white/60 leading-relaxed max-w-3xl">
+            Success in short-term rentals isn't about "hosting." It's about <span className="text-white font-semibold">Cold, Hard Data</span> and <span className="text-white font-semibold">Ruthless Execution.</span> If you aren't dominating, you're losing.
           </p>
         </motion.div>
 
@@ -77,26 +83,26 @@ export function PainSection() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="flex items-center gap-4 mb-12">
-              <div className="w-14 h-14 rounded-none bg-destructive/20 flex items-center justify-center border border-destructive/30">
-                <AlertCircle className="w-8 h-8 text-destructive" />
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-14 h-14 bg-gradient-to-br from-red-500/20 to-red-600/10 flex items-center justify-center border border-red-500/30">
+                <AlertCircle className="w-7 h-7 text-red-400" />
               </div>
-              <h3 className="text-2xl font-black headline-aggressive text-destructive tracking-widest">THE LEGACY TRAP</h3>
+              <h3 className="font-display text-xl md:text-2xl font-bold text-red-400 tracking-wide">THE LEGACY TRAP</h3>
             </div>
 
             {problems.map((problem) => (
               <motion.div
                 key={problem.label}
                 variants={itemVariants}
-                className="group p-8 border border-white/5 bg-white/[0.02] hover:bg-destructive/[0.03] hover:border-destructive/30 transition-all duration-300"
+                className="group p-6 md:p-8 border border-white/5 bg-white/[0.02] hover:bg-red-500/[0.03] hover:border-red-500/20 transition-all duration-300 backdrop-blur-sm"
               >
-                <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 flex items-center justify-center shrink-0">
-                    <problem.icon className="w-8 h-8 text-destructive/50 group-hover:text-destructive group-hover:scale-110 transition-all" />
+                <div className="flex items-start gap-5">
+                  <div className="w-10 h-10 flex items-center justify-center shrink-0 bg-red-500/10 border border-red-500/20">
+                    <problem.icon className="w-5 h-5 text-red-400/70 group-hover:text-red-400 transition-all" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">{problem.label}</h4>
-                    <p className="text-muted-foreground group-hover:text-white/80 transition-colors leading-relaxed">{problem.description}</p>
+                    <h4 className="text-lg font-bold text-white/90 mb-2 tracking-wide">{problem.label}</h4>
+                    <p className="text-white/50 group-hover:text-white/70 transition-colors leading-relaxed text-sm md:text-base">{problem.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -111,26 +117,26 @@ export function PainSection() {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <div className="flex items-center gap-4 mb-12">
-              <div className="w-14 h-14 rounded-none bg-primary/20 flex items-center justify-center border border-primary/30">
-                <Target className="w-8 h-8 text-primary" />
+            <div className="flex items-center gap-4 mb-10">
+              <div className="w-14 h-14 bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center border border-primary/40 neon-glow-sm">
+                <Target className="w-7 h-7 text-primary" />
               </div>
-              <h3 className="text-2xl font-black headline-aggressive text-primary tracking-widest">DREAMSTATE DOMINATION</h3>
+              <h3 className="font-display text-xl md:text-2xl font-bold text-primary tracking-wide neon-text-glow">DREAMSTATE DOMINATION</h3>
             </div>
 
             {solutions.map((solution) => (
               <motion.div
                 key={solution.label}
                 variants={itemVariants}
-                className="group p-8 border border-primary/20 bg-primary/5 hover:bg-primary/10 hover:border-primary/50 neon-glow-sm transition-all duration-300"
+                className="group p-6 md:p-8 border border-primary/20 bg-primary/[0.03] hover:bg-primary/[0.08] hover:border-primary/40 transition-all duration-300 backdrop-blur-sm"
               >
-                <div className="flex items-start gap-6">
-                  <div className="w-12 h-12 flex items-center justify-center shrink-0">
-                    <solution.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-all" />
+                <div className="flex items-start gap-5">
+                  <div className="w-10 h-10 flex items-center justify-center shrink-0 bg-primary/10 border border-primary/30">
+                    <solution.icon className="w-5 h-5 text-primary group-hover:scale-110 transition-all" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-white mb-2 uppercase tracking-wide">{solution.label}</h4>
-                    <p className="text-white/70 group-hover:text-white transition-colors leading-relaxed">{solution.description}</p>
+                    <h4 className="text-lg font-bold text-white/90 mb-2 tracking-wide">{solution.label}</h4>
+                    <p className="text-white/50 group-hover:text-white/70 transition-colors leading-relaxed text-sm md:text-base">{solution.description}</p>
                   </div>
                 </div>
               </motion.div>

@@ -30,7 +30,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-32 lg:py-48 bg-background relative overflow-hidden">
+    <section className="py-32 lg:py-48 section-obsidian relative overflow-hidden">
       <div className="absolute bottom-0 left-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[200px]" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -42,7 +42,7 @@ export function TestimonialsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-24 max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl headline-aggressive mb-8">
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">
             OWNER <br />
             <span className="text-primary neon-text-glow">INTELLIGENCE</span>
           </h2>
@@ -90,7 +90,7 @@ export function TestimonialsSection() {
                   </div>
                 </div>
                 <div>
-                  <p className="font-black text-white headline-aggressive text-lg tracking-wider">{testimonial.name}</p>
+                  <p className="font-display font-bold text-white text-lg tracking-wide">{testimonial.name}</p>
                   <div className="flex items-center gap-2 text-primary font-black text-xs tracking-[0.2em] mt-1">
                     <TrendingUp className="w-3 h-3" />
                     {testimonial.location}

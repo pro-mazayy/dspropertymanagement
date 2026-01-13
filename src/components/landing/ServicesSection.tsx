@@ -51,8 +51,13 @@ const itemVariants = {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-32 lg:py-48 bg-pure-white relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[180px]" />
+    <section id="services" className="py-32 lg:py-48 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a] relative overflow-hidden">
+      {/* Premium Background Effects */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[200px]" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[180px]" />
+      
+      {/* Subtle Grid Pattern */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -61,14 +66,17 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-24 max-w-4xl mx-auto"
+          className="text-center mb-20 max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl headline-aggressive mb-8">
-            OUR STRATEGIC <br />
+          <span className="inline-block px-4 py-2 mb-6 text-xs font-bold tracking-[0.2em] text-primary uppercase border border-primary/40 bg-primary/10">
+            OUR ARSENAL
+          </span>
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white">
+            STRATEGIC <br />
             <span className="text-primary neon-text-glow">ROI WEAPONS</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            Traditional management is a relic. We deploy three core strategic weapons to ensure your assets achieve total market surrender and peak yield under the Dreamstate Domination protocol.
+          <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-2xl mx-auto">
+            Traditional management is a relic. We deploy <span className="text-white font-semibold">three core strategic weapons</span> to ensure your assets achieve total market surrender and peak yield under the Dreamstate Domination protocol.
           </p>
         </motion.div>
 
@@ -84,34 +92,34 @@ export function ServicesSection() {
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className={`group relative p-10 rounded-none border border-white/5 transition-all duration-500 hover:border-primary/40 ${service.highlight
-                ? "bg-primary/[0.03] md:col-span-1 lg:row-span-1"
-                : "bg-card/40"
+              className={`group relative p-8 md:p-10 border transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${service.highlight
+                ? "bg-gradient-to-br from-primary/15 to-primary/5 border-primary/40 hover:border-primary"
+                : "bg-white/5 backdrop-blur-sm border-white/10 hover:border-primary/50 hover:bg-white/10"
                 } ${index === 0 ? "lg:col-span-2" : ""}`}
             >
-              {/* Glow effect for highlighted cards */}
+              {/* Hover Glow */}
               {service.highlight && (
-                <div className="absolute inset-0 bg-primary/[0.02] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-primary/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               )}
 
               <div className="relative z-10">
                 <div
-                  className={`w-16 h-16 rounded-none flex items-center justify-center mb-10 border transition-all duration-500 ${service.highlight
-                    ? "bg-primary/20 border-primary/30 group-hover:bg-primary group-hover:border-primary"
-                    : "bg-secondary border-white/10 group-hover:border-primary/50"
+                  className={`w-14 h-14 flex items-center justify-center mb-8 border transition-all duration-500 ${service.highlight
+                    ? "bg-primary/20 border-primary/50 group-hover:bg-primary group-hover:border-primary"
+                    : "bg-white/10 border-white/20 group-hover:border-primary group-hover:bg-primary/20"
                     }`}
                 >
                   <service.icon
-                    className={`w-8 h-8 transition-colors duration-500 ${service.highlight ? "text-primary group-hover:text-black" : "text-white/50 group-hover:text-primary"
+                    className={`w-7 h-7 transition-colors duration-500 ${service.highlight ? "text-primary group-hover:text-black" : "text-white group-hover:text-primary"
                       }`}
                   />
                 </div>
 
-                <h3 className="text-2xl font-black mb-6 text-white headline-aggressive tracking-wider">
+                <h3 className="font-display text-xl md:text-2xl font-bold mb-4 text-white tracking-wide">
                   {service.title}
                 </h3>
 
-                <p className="text-muted-foreground group-hover:text-white/80 transition-colors leading-relaxed text-lg">
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors leading-relaxed">
                   {service.description}
                 </p>
               </div>

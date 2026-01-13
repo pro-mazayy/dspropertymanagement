@@ -36,7 +36,12 @@ const caseStudies = [
 
 export function CaseStudiesSection() {
   return (
-    <section id="case-studies" className="py-32 lg:py-48 bg-secondary/10 relative overflow-hidden">
+    <section id="case-studies" className="py-32 lg:py-48 bg-gradient-to-b from-[#0a0a0a] via-[#0d0d0d] to-[#0a0a0a] relative overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[200px]" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[200px]" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
+      
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -44,14 +49,17 @@ export function CaseStudiesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-24 max-w-4xl mx-auto"
+          className="text-center mb-20 max-w-4xl mx-auto"
         >
-          <h2 className="text-4xl md:text-6xl lg:text-7xl headline-aggressive mb-8">
+          <span className="inline-block px-4 py-2 mb-6 text-xs font-bold tracking-[0.2em] text-primary uppercase border border-primary/40 bg-primary/10">
+            CASE STUDIES
+          </span>
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 text-white">
             VERIFIED <br />
             <span className="text-primary neon-text-glow">FIELD PROOF</span>
           </h2>
-          <p className="text-xl text-muted-foreground leading-relaxed">
-            We don't do "marketing." We deploy strategic revenue systems. See the <span className="text-white font-bold">raw data</span> from our most recent successful liquidations.
+          <p className="text-xl text-gray-400 leading-relaxed">
+            We don't do "marketing." We deploy strategic revenue systems. See the <span className="text-white font-bold">raw data</span> from our most recent successful transformations.
           </p>
         </motion.div>
 
@@ -64,19 +72,19 @@ export function CaseStudiesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group relative rounded-none overflow-hidden bg-card/40 border border-white/5 hover:border-primary/40 transition-all duration-500"
+              className="group relative overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500"
             >
               {/* Image */}
-              <div className="relative h-64 overflow-hidden">
+              <div className="relative h-56 overflow-hidden">
                 <img
                   src={study.image}
                   alt={study.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
                 {/* Increase Badge */}
-                <div className="absolute top-6 right-6 px-4 py-2 bg-primary text-black font-black text-xs headline-aggressive flex items-center gap-2 shadow-2xl">
+                <div className="absolute top-4 right-4 px-4 py-2 bg-primary text-black font-bold text-xs flex items-center gap-2 shadow-lg">
                   <TrendingUp className="w-4 h-4 stroke-[3px]" />
                   {study.increase} ROI BOOST
                 </div>
@@ -86,15 +94,15 @@ export function CaseStudiesSection() {
               <div className="p-8">
                 <div className="flex items-center gap-2 mb-2">
                   <Target className="w-4 h-4 text-primary" />
-                  <p className="text-xs font-black headline-aggressive text-primary tracking-widest">{study.type}</p>
+                  <p className="text-xs font-bold text-primary tracking-widest">{study.type}</p>
                 </div>
-                <h3 className="text-2xl font-black text-white mb-8 headline-aggressive">{study.title}</h3>
+                <h3 className="font-display text-2xl font-bold text-white mb-8">{study.title}</h3>
 
                 {/* Before/After Grid */}
-                <div className="grid grid-cols-2 gap-6 p-6 bg-black/40 border border-white/5">
+                <div className="grid grid-cols-2 gap-6 p-6 bg-black/40 border border-white/10">
                   {/* Before */}
                   <div className="space-y-4">
-                    <p className="text-[10px] font-black text-destructive uppercase tracking-[0.3em]">LEGACY STATE</p>
+                    <p className="text-[10px] font-bold text-destructive uppercase tracking-[0.3em]">LEGACY STATE</p>
                     <div className="flex items-center gap-2 opacity-50">
                       <Calendar className="w-4 h-4 text-white" />
                       <span className="text-sm text-white font-bold">{study.beforeOccupancy}</span>
@@ -106,15 +114,15 @@ export function CaseStudiesSection() {
                   </div>
 
                   {/* After */}
-                  <div className="space-y-4 border-l border-white/10 pl-6">
-                    <p className="text-[10px] font-black text-primary uppercase tracking-[0.3em]">DOMINATED STATE</p>
+                  <div className="space-y-4 border-l border-white/20 pl-6">
+                    <p className="text-[10px] font-bold text-primary uppercase tracking-[0.3em]">DOMINATED STATE</p>
                     <div className="flex items-center gap-2 text-primary">
                       <Zap className="w-4 h-4 fill-current" />
-                      <span className="text-lg text-white font-black">{study.afterOccupancy}</span>
+                      <span className="text-lg text-white font-bold">{study.afterOccupancy}</span>
                     </div>
                     <div className="flex items-center gap-2 text-primary">
                       <DollarSign className="w-4 h-4 stroke-[3px]" />
-                      <span className="text-lg text-white font-black">{study.afterRevenue}</span>
+                      <span className="text-lg text-white font-bold">{study.afterRevenue}</span>
                     </div>
                   </div>
                 </div>

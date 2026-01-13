@@ -5,7 +5,9 @@ import { PainSection } from "@/components/landing/PainSection";
 import { ServicesSection } from "@/components/landing/ServicesSection";
 import { ProofSection } from "@/components/landing/ProofSection";
 import { CaseStudiesSection } from "@/components/landing/CaseStudiesSection";
+import { VideoTestimonialsSection } from "@/components/landing/VideoTestimonialsSection";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
+import { FAQSection } from "@/components/landing/FAQSection";
 import { CalculatorSection } from "@/components/landing/CalculatorSection";
 import { CTASection } from "@/components/landing/CTASection";
 import { Footer } from "@/components/landing/Footer";
@@ -20,7 +22,9 @@ const Index = () => {
       <ServicesSection />
       <ProofSection />
       <CaseStudiesSection />
+      <VideoTestimonialsSection />
       <TestimonialsSection />
+      <FAQSection />
       <CalculatorSection />
       <CTASection />
       <Footer />

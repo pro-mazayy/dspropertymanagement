@@ -45,13 +45,13 @@ const platforms = [
 
 export function PlatformBar() {
   return (
-    <section className="py-12 bg-secondary/30 border-y border-border/50 overflow-hidden">
+    <section className="py-10 bg-gray-900 border-y border-gray-800 overflow-hidden">
       <div className="container mx-auto px-6 mb-6">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-center text-sm font-medium text-muted-foreground uppercase tracking-widest"
+          className="text-center text-xs font-bold text-primary uppercase tracking-[0.3em]"
         >
           Dominating Every Major Platform
         </motion.p>
@@ -66,8 +66,8 @@ export function PlatformBar() {
               key={`${platform.name}-${index}`}
               className="flex items-center gap-4 mx-12 whitespace-nowrap"
             >
-              <span className="text-4xl">{platform.logo}</span>
-              <span className="text-2xl md:text-3xl font-bold text-muted-foreground/60 hover:text-foreground transition-colors">
+              <span className="text-4xl text-gray-500">{platform.logo}</span>
+              <span className="text-2xl md:text-3xl font-bold text-gray-500 hover:text-primary transition-colors">
                 {platform.name}
               </span>
             </div>
