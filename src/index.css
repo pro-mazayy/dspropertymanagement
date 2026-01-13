@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* DS Property Management - Hyper-Premium Dark Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 68 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 68 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 12%;
+    --ring: 68 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom DS Colors - Sharpened */
+    --neon: 68 100% 50%;
+    --neon-glow: 68 100% 55%;
+    --dark-950: 0 0% 2%;
+    --dark-900: 0 0% 5%;
+    --dark-800: 0 0% 8%;
+    
+    --sidebar-background: 0 0% 2%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 68 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 8%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 12%;
+    --sidebar-ring: 68 100% 50%;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 68 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 68 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 68 100% 50%;
+
+    --sidebar-background: 0 0% 3%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 68 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 68 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-br from-white via-white to-primary/50 bg-clip-text text-transparent;
+  }
+
+  .text-neon-gradient {
+    @apply bg-gradient-to-br from-primary via-primary to-[hsl(68,100%,80%)] bg-clip-text text-transparent;
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 30px hsl(68 100% 50% / 0.4),
+                0 0 60px hsl(68 100% 50% / 0.15);
+  }
+
+  .neon-glow-sm {
+    box-shadow: 0 0 15px hsl(68 100% 50% / 0.3);
+  }
+
+  .neon-text-glow {
+    text-shadow: 0 0 15px hsl(68 100% 50% / 0.5),
+                 0 0 30px hsl(68 100% 50% / 0.2);
+  }
+
+  .headline-aggressive {
+    @apply font-black uppercase tracking-tighter leading-[0.85];
+  }
+
+  .glass {
+    @apply backdrop-blur-2xl bg-background/70;
+  }
+
+  .glass-card {
+    @apply backdrop-blur-2xl bg-card/60 border border-white/10;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(0 0% 5%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(0 0% 20%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(68 100% 50%);
+}
+
+/* Marquee animation for platform logos */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
+
+/* Pulse glow animation for buttons */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(68 100% 50% / 0.4),
+                0 0 40px hsl(68 100% 50% / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(68 100% 50% / 0.6),
+                0 0 60px hsl(68 100% 50% / 0.3);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(hsl(0 0% 15% / 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(0 0% 15% / 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
