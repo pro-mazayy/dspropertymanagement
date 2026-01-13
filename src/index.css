@@ -2,77 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-/* DS Property Management - Hyper-Premium Dark Theme */
+/* Dreamstate Property Management - Premium White Light Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 100%;
+    /* Pure White Base - King Kong Inspired */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --card: 0 0% 5%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
 
-    --popover: 0 0% 5%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
 
+    /* Electric Lime Primary */
     --primary: 68 100% 50%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 7%;
-    --secondary-foreground: 0 0% 100%;
+    /* Light Gray Secondary */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 8%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 60%;
+    /* Subtle Muted */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 40%;
 
+    /* Accent */
     --accent: 68 100% 50%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 12%;
+    /* Minimal Borders */
+    --border: 0 0% 90%;
+    --input: 0 0% 96%;
     --ring: 68 100% 50%;
 
     --radius: 0.5rem;
 
-    /* Premium Mixed Variables */
-    --surface-light: 0 0% 100%;
-    --surface-light-foreground: 0 0% 0%;
-    --surface-dark: 0 0% 2%;
-    --surface-dark-foreground: 0 0% 100%;
+    /* Premium White Variables */
+    --pure-white: 0 0% 100%;
+    --off-white: 0 0% 98%;
+    --light-gray: 0 0% 96%;
+    --charcoal-text: 0 0% 8%;
+    --charcoal-medium: 0 0% 20%;
+    --charcoal-light: 0 0% 40%;
 
-    --dark-950: 0 0% 2%;
-    --dark-900: 0 0% 5%;
-    --dark-800: 0 0% 8%;
+    /* Metallic Accents */
+    --platinum: 210 10% 90%;
+    --brushed-gold: 45 65% 55%;
 
-    --sidebar-background: 0 0% 2%;
-    --sidebar-foreground: 0 0% 100%;
+    /* Dark Sections (for contrast) */
+    --obsidian-black: 0 0% 4%;
+    --charcoal-900: 0 0% 10%;
+    --charcoal-800: 0 0% 15%;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 8%;
     --sidebar-primary: 68 100% 50%;
     --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 8%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 12%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 8%;
+    --sidebar-border: 0 0% 90%;
     --sidebar-ring: 68 100% 50%;
   }
 
   .dark {
-    --background: 0 0% 0%;
+    --background: 0 0% 4%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 5%;
+    --card: 0 0% 10%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 5%;
+    --popover: 0 0% 10%;
     --popover-foreground: 0 0% 100%;
 
     --primary: 68 100% 50%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 10%;
+    --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
+    --muted: 0 0% 20%;
     --muted-foreground: 0 0% 65%;
 
     --accent: 68 100% 50%;
@@ -85,24 +98,27 @@
     --input: 0 0% 15%;
     --ring: 68 100% 50%;
 
-    --sidebar-background: 0 0% 3%;
+    --sidebar-background: 0 0% 4%;
     --sidebar-foreground: 0 0% 100%;
     --sidebar-primary: 68 100% 50%;
     --sidebar-primary-foreground: 0 0% 0%;
-    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 0 0% 15%;
+    --sidebar-border: 0 0% 20%;
     --sidebar-ring: 68 100% 50%;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   html {
@@ -112,7 +128,7 @@
 
 @layer utilities {
   .text-gradient {
-    background-image: linear-gradient(to bottom right, white, white, hsla(68, 100%, 50%, 0.5));
+    background-image: linear-gradient(to bottom right, hsl(var(--charcoal-text)), hsl(var(--charcoal-text)), hsla(68, 100%, 50%, 0.5));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -148,13 +164,14 @@
 
   .glass {
     backdrop-filter: blur(24px);
-    background-color: hsla(0, 0%, 0%, 0.7);
+    background-color: hsla(0, 0%, 100%, 0.8);
+    border: 1px solid hsla(0, 0%, 0%, 0.05);
   }
 
   .glass-card {
     backdrop-filter: blur(24px);
-    background-color: hsla(0, 0%, 5%, 0.6);
-    border: 1px solid hsla(0, 0%, 100%, 0.1);
+    background-color: hsla(0, 0%, 100%, 0.9);
+    border: 1px solid hsla(0, 0%, 0%, 0.08);
   }
 
   /* Premium Textures & Sections */
@@ -168,28 +185,82 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.03;
+    opacity: 0.02;
     pointer-events: none;
     z-index: 1;
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
     filter: brightness(100%) contrast(150%);
   }
 
-  .section-light {
-    background-color: hsl(var(--surface-light));
-    color: hsl(var(--surface-light-foreground));
+  /* Premium White Sections */
+  .section-white {
+    background-color: hsl(var(--pure-white));
+    color: hsl(var(--charcoal-text));
   }
 
-  .section-dark {
-    background-color: hsl(var(--surface-dark));
-    color: hsl(var(--surface-dark-foreground));
+  .section-off-white {
+    background-color: hsl(var(--off-white));
+    color: hsl(var(--charcoal-text));
+  }
+
+  .section-light-gray {
+    background-color: hsl(var(--light-gray));
+    color: hsl(var(--charcoal-text));
+  }
+
+  /* Dark Accent Sections (for contrast) */
+  .section-obsidian {
+    background-color: hsl(var(--obsidian-black));
+    color: hsl(var(--pure-white));
+  }
+
+  .section-charcoal {
+    background-color: hsl(var(--charcoal-900));
+    color: hsl(var(--pure-white));
   }
 
   .mesh-gradient {
-    background-color: hsla(0, 0%, 0%, 1);
+    background-color: hsla(0, 0%, 100%, 1);
     background-image:
-      radial-gradient(at 0% 0%, hsla(68, 100%, 50%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 100% 0%, hsla(68, 100%, 50%, 0.1) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, hsla(68, 100%, 50%, 0.08) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(68, 100%, 50%, 0.05) 0px, transparent 50%);
+  }
+
+  .mesh-gradient-light {
+    background-color: hsl(var(--pure-white));
+    background-image:
+      radial-gradient(at 0% 0%, hsla(68, 100%, 50%, 0.06) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(68, 100%, 50%, 0.04) 0px, transparent 50%);
+  }
+
+  .subtle-shadow {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05),
+      0 1px 2px rgba(0, 0, 0, 0.03);
+  }
+
+  .elevated-shadow {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07),
+      0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .text-charcoal {
+    color: hsl(var(--charcoal-text));
+  }
+
+  .text-charcoal-medium {
+    color: hsl(var(--charcoal-medium));
+  }
+
+  .text-charcoal-light {
+    color: hsl(var(--charcoal-light));
+  }
+
+  .bg-pure-white {
+    background-color: hsl(var(--pure-white));
+  }
+
+  .border-light {
+    border-color: hsl(var(--border));
   }
 }
 
@@ -200,11 +271,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: hsl(0 0% 5%);
+  background: hsl(0 0% 96%);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: hsl(0 0% 20%);
+  background: hsl(0 0% 80%);
   border-radius: 4px;
 }
 
@@ -249,7 +320,7 @@
 /* Grid pattern background */
 .bg-grid-pattern {
   background-image:
-    linear-gradient(hsl(0 0% 15% / 0.3) 1px, transparent 1px),
-    linear-gradient(90deg, hsl(0 0% 15% / 0.3) 1px, transparent 1px);
+    linear-gradient(hsl(0 0% 90% / 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(0 0% 90% / 0.3) 1px, transparent 1px);
   background-size: 50px 50px;
 }

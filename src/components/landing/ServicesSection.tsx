@@ -51,8 +51,8 @@ const itemVariants = {
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-32 lg:py-48 section-light grain-overlay relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[180px]" />
+    <section id="services" className="py-32 lg:py-48 bg-pure-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/3 rounded-full blur-[180px]" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

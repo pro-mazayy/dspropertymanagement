@@ -26,7 +26,7 @@ export function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "glass border-b border-white/10 py-2" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-white/95 backdrop-blur-md border-b border-gray-200 py-2 shadow-sm" : "bg-transparent py-6"
         }`}
     >
       <nav className="container mx-auto px-6 flex items-center justify-between">
@@ -37,7 +37,7 @@ export function Navbar() {
           </div>
           <span className="text-2xl headline-aggressive tracking-tighter">
             <span className="text-primary">DREAM</span>
-            <span className="text-white">STATE</span>
+            <span className="text-charcoal">STATE</span>
           </span>
         </a>
 
@@ -47,7 +47,7 @@ export function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-xs font-black text-white/50 hover:text-primary tracking-[0.2em] transition-all hover:translate-y-[-1px]"
+              className="text-xs font-black text-charcoal-medium hover:text-primary tracking-[0.2em] transition-all hover:translate-y-[-1px]"
             >
               {link.label}
             </a>
@@ -67,7 +67,7 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden p-2 text-white"
+          className="md:hidden p-2 text-charcoal"
         >
           {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -80,7 +80,7 @@ export function Navbar() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
-            className="fixed inset-0 top-[72px] bg-black/95 backdrop-blur-3xl md:hidden z-40 border-t border-white/5"
+            className="fixed inset-0 top-[72px] bg-white/98 backdrop-blur-3xl md:hidden z-40 border-t border-gray-200"
           >
             <div className="container mx-auto px-6 py-12 flex flex-col gap-8 h-full">
               {navLinks.map((link) => (
@@ -88,7 +88,7 @@ export function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-4xl font-black headline-aggressive text-white/40 hover:text-primary transition-colors py-4 border-b border-white/5"
+                  className="text-4xl font-black headline-aggressive text-charcoal-light hover:text-primary transition-colors py-4 border-b border-gray-200"
                 >
                   {link.label}
                 </a>

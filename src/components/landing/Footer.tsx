@@ -21,7 +21,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="py-24 section-dark grain-overlay border-t border-white/5 relative overflow-hidden">
+    <footer className="py-24 section-obsidian border-t border-white/10 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-6 relative z-10">

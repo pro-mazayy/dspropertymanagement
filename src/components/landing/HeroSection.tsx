@@ -4,20 +4,16 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background grain-overlay">
-      {/* Background Image / Texture */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-pure-white">
+      {/* Subtle gradient background */}
       <div className="absolute inset-0 z-0">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay grayscale"
-          style={{ backgroundImage: 'url("/C:/Users/HP PC/.gemini/antigravity/brain/d4e41df3-fa25-4cb3-a5b0-6ae2c6ea22ec/premium_miami_luxury_listing_bw_2_1768322168186.png")' }}
-        />
-        <div className="absolute inset-0 mesh-gradient opacity-60" />
+        <div className="absolute inset-0 mesh-gradient-light" />
       </div>
 
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements - Subtle */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[150px] animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px] animate-pulse delay-1000" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[150px] animate-pulse delay-1000" />
       </div>
 
       {/* Content */}
@@ -41,8 +37,8 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl headline-aggressive mb-8">
-            <span className="block text-white opacity-90">WE DON'T JUST</span>
-            <span className="block text-white">MANAGE. WE</span>
+            <span className="block text-charcoal opacity-90">WE DON'T JUST</span>
+            <span className="block text-charcoal">MANAGE. WE</span>
             <span className="block text-neon-gradient neon-text-glow">
               WEAPONIZE.
             </span>
@@ -53,9 +49,9 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto mb-12 leading-tight"
+            className="text-xl md:text-2xl lg:text-3xl text-charcoal-medium max-w-4xl mx-auto mb-12 leading-tight"
           >
-            Stop settling for <span className="text-white font-bold underline decoration-destructive">mediocre management</span> and "vanity" bookings. We deploy aggressive AI-driven ROI strategies that turn your property into a <span className="text-primary font-black italic">high-yield cash-printing machine.</span>
+            Stop settling for <span className="text-charcoal font-bold underline decoration-destructive">mediocre management</span> and "vanity" bookings. We deploy aggressive AI-driven ROI strategies that turn your property into a <span className="text-primary font-black italic">high-yield cash-printing machine.</span>
           </motion.p>
 
           {/* CTAs */}
