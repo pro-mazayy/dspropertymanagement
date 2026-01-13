@@ -39,9 +39,15 @@ const itemVariants = {
 
 export function PainSection() {
   return (
-    <section className="py-32 lg:py-48 bg-background relative overflow-hidden">
-      {/* Background accent */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+    <section className="py-32 lg:py-48 section-dark grain-overlay relative overflow-hidden">
+      {/* Background Image / Texture */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30 mix-blend-soft-light grayscale"
+          style={{ backgroundImage: 'url("/C:/Users/HP PC/.gemini/antigravity/brain/d4e41df3-fa25-4cb3-a5b0-6ae2c6ea22ec/modern_architecture_night_exterior_miami_bw_2_1768322183830.png")' }}
+        />
+        <div className="absolute inset-0 mesh-gradient opacity-40" />
+      </div>
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}

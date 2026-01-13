@@ -4,12 +4,20 @@ import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[110vh] flex items-center justify-center overflow-hidden bg-background">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-      <div className="absolute inset-0">
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px] animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px] animate-pulse delay-1000" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background grain-overlay">
+      {/* Background Image / Texture */}
+      <div className="absolute inset-0 z-0">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 mix-blend-overlay grayscale"
+          style={{ backgroundImage: 'url("/C:/Users/HP PC/.gemini/antigravity/brain/d4e41df3-fa25-4cb3-a5b0-6ae2c6ea22ec/premium_miami_luxury_listing_bw_2_1768322168186.png")' }}
+        />
+        <div className="absolute inset-0 mesh-gradient opacity-60" />
+      </div>
+
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-[150px] animate-pulse" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[150px] animate-pulse delay-1000" />
       </div>
 
       {/* Content */}
@@ -36,7 +44,7 @@ export function HeroSection() {
             <span className="block text-white opacity-90">WE DON'T JUST</span>
             <span className="block text-white">MANAGE. WE</span>
             <span className="block text-neon-gradient neon-text-glow">
-               WEAPONIZE.
+              WEAPONIZE.
             </span>
           </h1>
 
@@ -87,18 +95,18 @@ export function HeroSection() {
             transition={{ delay: 0.8 }}
             className="pt-12 border-t border-white/5 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500"
           >
-             <div className="flex items-center gap-2 text-white font-bold tracking-tighter">
-                <ShieldCheck className="w-5 h-5 text-primary" />
-                <span>#1 RATED IN MIAMI</span>
-             </div>
-             <div className="flex items-center gap-2 text-white font-bold tracking-tighter">
-                <Zap className="w-5 h-5 text-primary" />
-                <span>ROI GUARANTEED</span>
-             </div>
-             <div className="flex items-center gap-2 text-white font-bold tracking-tighter">
-                <TrendingUp className="w-5 h-5 text-primary" />
-                <span>$2.5M+ GENERATED</span>
-             </div>
+            <div className="flex items-center gap-2 text-white font-bold tracking-tighter">
+              <ShieldCheck className="w-5 h-5 text-primary" />
+              <span>#1 RATED IN MIAMI</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-bold tracking-tighter">
+              <Zap className="w-5 h-5 text-primary" />
+              <span>ROI GUARANTEED</span>
+            </div>
+            <div className="flex items-center gap-2 text-white font-bold tracking-tighter">
+              <TrendingUp className="w-5 h-5 text-primary" />
+              <span>$2.5M+ GENERATED</span>
+            </div>
           </motion.div>
         </motion.div>
       </div>

@@ -21,7 +21,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-white/10 py-24 relative overflow-hidden">
+    <footer className="py-24 section-dark grain-overlay border-t border-white/5 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[150px]" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -78,11 +78,11 @@ export function Footer() {
             <ul className="space-y-6">
               <li>
                 <a
-                  href="mailto:info@dspropertymanagement.net"
+                  href="mailto:info@dreamstate.management"
                   className="flex items-center gap-3 text-white/60 hover:text-primary transition-all font-bold text-sm"
                 >
                   <Mail className="w-4 h-4 text-primary" />
-                  info@dspropertymanagement.net
+                  info@dreamstate.management
                 </a>
               </li>
               <li>

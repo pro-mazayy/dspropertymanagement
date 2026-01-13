@@ -67,9 +67,9 @@ export function CalculatorSection() {
   };
 
   return (
-    <section id="calculator" className="py-32 lg:py-48 bg-background relative overflow-hidden">
+    <section id="calculator" className="py-32 lg:py-48 section-light grain-overlay relative overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-primary/5 rounded-full blur-[250px]" />
 
       <div className="container mx-auto px-6 relative z-10">
