@@ -67,8 +67,8 @@ export function ServicesSection() {
             OUR STRATEGIC <br />
             <span className="text-primary neon-text-glow">ROI WEAPONS</span>
           </h2>
-          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed">
-            We don't provide "services." We deploy a multi-layered offensive strategy designed to <span className="text-white font-bold">liquidate your competition</span> and maximize your bottom line.
+          <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Traditional management is a relic. We deploy three core strategic weapons to ensure your assets achieve total market surrender and peak yield under the Dreamstate Domination protocol.
           </p>
         </motion.div>
 
@@ -85,8 +85,8 @@ export function ServicesSection() {
               key={service.title}
               variants={itemVariants}
               className={`group relative p-10 rounded-none border border-white/5 transition-all duration-500 hover:border-primary/40 ${service.highlight
-                  ? "bg-primary/[0.03] md:col-span-1 lg:row-span-1"
-                  : "bg-card/40"
+                ? "bg-primary/[0.03] md:col-span-1 lg:row-span-1"
+                : "bg-card/40"
                 } ${index === 0 ? "lg:col-span-2" : ""}`}
             >
               {/* Glow effect for highlighted cards */}
@@ -97,8 +97,8 @@ export function ServicesSection() {
               <div className="relative z-10">
                 <div
                   className={`w-16 h-16 rounded-none flex items-center justify-center mb-10 border transition-all duration-500 ${service.highlight
-                      ? "bg-primary/20 border-primary/30 group-hover:bg-primary group-hover:border-primary"
-                      : "bg-secondary border-white/10 group-hover:border-primary/50"
+                    ? "bg-primary/20 border-primary/30 group-hover:bg-primary group-hover:border-primary"
+                    : "bg-secondary border-white/10 group-hover:border-primary/50"
                     }`}
                 >
                   <service.icon

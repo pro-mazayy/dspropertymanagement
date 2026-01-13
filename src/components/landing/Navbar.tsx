@@ -36,8 +36,8 @@ export function Navbar() {
             <ShieldAlert className="w-6 h-6 text-black -rotate-45 group-hover:-rotate-90 transition-transform duration-500" />
           </div>
           <span className="text-2xl headline-aggressive tracking-tighter">
-            <span className="text-primary">DS</span>
-            <span className="text-white">DOMINATION</span>
+            <span className="text-primary">DREAM</span>
+            <span className="text-white">STATE</span>
           </span>
         </a>
 

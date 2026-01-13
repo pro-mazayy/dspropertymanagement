@@ -33,8 +33,8 @@ export function Footer() {
                 <ShieldAlert className="w-6 h-6 text-black -rotate-45 group-hover:-rotate-90 transition-transform duration-500" />
               </div>
               <span className="text-2xl headline-aggressive tracking-tighter">
-                <span className="text-primary">DS</span>
-                <span className="text-white">DOMINATION</span>
+                <span className="text-primary">DREAM</span>
+                <span className="text-white">STATE</span>
               </span>
             </a>
             <p className="text-muted-foreground mb-8 text-lg font-medium leading-relaxed">
@@ -125,7 +125,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-6">
           <p className="text-xs font-black headline-aggressive text-white/30 tracking-[0.2em]">
-            © {new Date().getFullYear()} DS PROPERTY DOMINATION. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} DREAMSTATE PROPERTY MANAGEMENT. ALL RIGHTS RESERVED.
           </p>
           <div className="flex items-center gap-4 text-xs font-black headline-aggressive text-primary/50 tracking-[0.2em]">
             <Zap className="w-4 h-4 fill-current" />

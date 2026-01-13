@@ -37,7 +37,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
       const steps = 60;
       const increment = value / steps;
       let current = 0;
-      
+
       const timer = setInterval(() => {
         current += increment;
         if (current >= value) {
@@ -67,7 +67,7 @@ export function ProofSection() {
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[200px]" />
       </div>
-      
+
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -82,7 +82,7 @@ export function ProofSection() {
             <span className="text-primary neon-text-glow">SPEAK</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Numbers don't lie. Here's what DS Property Management delivers.
+            Numbers don't lie. Here's what Dreamstate Property Management delivers.
           </p>
         </motion.div>
 
@@ -100,15 +100,15 @@ export function ProofSection() {
               <div className="w-16 h-16 mx-auto mb-6 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
                 <stat.icon className="w-8 h-8 text-primary" />
               </div>
-              
+
               <div className="text-5xl md:text-6xl lg:text-7xl font-black text-foreground mb-2">
                 <AnimatedCounter value={stat.value} suffix={stat.suffix} />
               </div>
-              
+
               <h3 className="text-xl font-bold text-foreground mb-2">
                 {stat.label}
               </h3>
-              
+
               <p className="text-muted-foreground">
                 {stat.description}
               </p>

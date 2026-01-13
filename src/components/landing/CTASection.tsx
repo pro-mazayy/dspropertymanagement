@@ -30,7 +30,7 @@ export function CTASection() {
           </h2>
 
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-16 leading-relaxed">
-            Your competition is bleeding. The market is wide open. You can either watch from the sidelines or <span className="text-white font-bold">liquidate your rivals</span> with the DS Domination system. The choice is yours.
+            Your competition is bleeding. The market is wide open. You can either watch from the sidelines or <span className="text-white font-bold">liquidate your rivals</span> with the Dreamstate Domination system. The choice is yours.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

@@ -7,7 +7,7 @@ const testimonials = [
     location: "MIAMI EXPEDITION",
     property: "HIGH-YIELD CONDO",
     rating: 5,
-    quote: "I was bleeding money with legacy management. DS Domination executed a 3-month turnaround that skyrocketed my revenue by 85%. This isn't management, it's financial warfare.",
+    quote: "I was bleeding money with legacy management. Dreamstate Domination executed a 3-month turnaround that skyrocketed my revenue by 85%. This isn't management, it's financial warfare.",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=60",
   },
   {

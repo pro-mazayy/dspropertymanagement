@@ -27,8 +27,15 @@ const containerVariants = {
 
 const itemVariants = {
   hidden: { opacity: 0, x: -20 },
-  visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } },
-};
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: "spring",
+      stiffness: 100
+    } as const
+  },
+} as const;
 
 export function PainSection() {
   return (
@@ -102,7 +109,7 @@ export function PainSection() {
               <div className="w-14 h-14 rounded-none bg-primary/20 flex items-center justify-center border border-primary/30">
                 <Target className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="text-2xl font-black headline-aggressive text-primary tracking-widest">THE DS DOMINATION</h3>
+              <h3 className="text-2xl font-black headline-aggressive text-primary tracking-widest">DREAMSTATE DOMINATION</h3>
             </div>
 
             {solutions.map((solution) => (
